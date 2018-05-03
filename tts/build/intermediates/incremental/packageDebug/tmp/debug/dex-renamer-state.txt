@@ -1,0 +1,4 @@
+#Thu May 03 20:35:39 SGT 2018
+base.0=D\:\\360Downloads\\asr_v3.0.7.2_bdasr_20180313\\tts\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
