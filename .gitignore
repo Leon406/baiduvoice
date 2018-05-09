@@ -16,8 +16,7 @@ gen/
 out/
 
 # Gradle files
-.gradle/
-build/
+
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -35,8 +34,7 @@ proguard/
 captures/
 
 # IntelliJ
-*.iml
-.idea/
+
 
 
 # Keystore files
