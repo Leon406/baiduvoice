@@ -117,14 +117,14 @@ public class BaseActivity extends AppCompatActivity implements MainHandlerConsta
         mainHandler.sendMessage(msg);
     }
 
-    private void print(Message msg) {
+    protected void print(Message msg) {
         String message = (String) msg.obj;
         if (message != null) {
             scrollLog(message);
         }
     }
 
-    private void scrollLog(String message) {
+    protected void scrollLog(String message) {
         Spannable colorMessage = new SpannableString(message + "\n");
         colorMessage.setSpan(new ForegroundColorSpan(0xff0000ff), 0, message.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

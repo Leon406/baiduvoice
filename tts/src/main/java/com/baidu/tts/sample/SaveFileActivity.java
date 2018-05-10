@@ -17,7 +17,7 @@ import ll.leon.com.ttslib.util.FileUtil;
  * Created by fujiayi on 2017/9/15.
  */
 
-public class SaveFileActivity extends SynthActivity {
+public class SaveFileActivity extends SynthActivity2 {
     {
         DESC = "本示例展示如何保存合成文件。 点击第一行的前三个按钮都会触发保存文件。\n"
                 + "您也可以自行对用于保存文件的音频流实时实时处理。\n"
