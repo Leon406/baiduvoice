@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.amyrobotics.demo.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <Button
+            android:layout_alignParentRight="true"
+            android:textSize="26sp"
+            android:text="下一页"
+            android:id="@+id/bt_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="基本控制"
+            android:textSize="26sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="头部控制"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_head_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="停止"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_head_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/btn_head_stop"
+                android:layout_marginRight="40dp"
+                android:layout_toLeftOf="@+id/btn_head_stop"
+                android:text="左摇"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_head_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/btn_head_stop"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@+id/btn_head_stop"
+                android:text="右摆"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_head_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btn_head_stop"
+                android:layout_alignLeft="@+id/btn_head_stop"
+                android:layout_marginBottom="40dp"
+                android:text="前俯"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_head_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btn_head_stop"
+                android:layout_below="@+id/btn_head_stop"
+                android:layout_marginTop="40dp"
+                android:text="后仰"
+                android:textSize="26sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="身体控制"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_body_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="停止"
+                android:textSize="26sp" />
+
+
+            <Button
+                android:id="@+id/btn_body_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/btn_body_stop"
+                android:layout_marginRight="40dp"
+                android:layout_toLeftOf="@+id/btn_body_stop"
+                android:text="左转"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_body_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/btn_body_stop"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@+id/btn_body_stop"
+                android:text="右转"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_body_advance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btn_body_stop"
+                android:layout_alignLeft="@+id/btn_body_stop"
+                android:layout_marginBottom="40dp"
+                android:text="前进"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/btn_body_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/btn_body_stop"
+                android:layout_below="@+id/btn_body_stop"
+                android:layout_marginTop="40dp"
+                android:text="后退"
+                android:textSize="26sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

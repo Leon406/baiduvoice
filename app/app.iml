@@ -89,7 +89,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/compatible_screen_manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant_run_merged_manifests" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/merged_manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="下一页"
+            android:textSize="26sp" />
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="上一页"
+            android:textSize="26sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="灯环控制"
+            android:textSize="26sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_waring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="warn"
+        android:text="警告"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="正常"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_talking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="对话"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_thinking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="思考"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_listening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="倾听"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_lowBattery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="低电"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_singing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="歌唱"
+        android:textSize="26sp" />
+</LinearLayout>

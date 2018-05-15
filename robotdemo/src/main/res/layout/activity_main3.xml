@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.amyrobotics.demo.Main3Activity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:text="综合操作"
+            android:textSize="26sp" />
+
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="下一页"
+            android:textSize="26sp" />
+
+
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="上一页"
+            android:textSize="26sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_move_2s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="直线运动两秒停止"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_arc_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="曲线运动两秒停止"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_dance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="舞步"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_turnround"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="转圈"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_follow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="跟随"
+        android:textSize="26sp" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="停止"
+        android:textSize="26sp" />
+</LinearLayout>

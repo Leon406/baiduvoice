@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.amyrobotics.demo.Main3Activity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="状态获取"
+            android:textSize="26sp" />
+
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="下一页"
+            android:textSize="26sp" />
+
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="上一页"
+            android:textSize="26sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:textSize="26sp"
+        android:id="@+id/btn_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始接收触摸状态" />
+
+    <Button
+        android:textSize="26sp"
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止接收触摸状态" />
+
+
+</LinearLayout>

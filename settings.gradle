@@ -1,1 +1,1 @@
-include ':voicelib', ':app', ':tts', ':ttslib'
+include ':voicelib', ':app', ':tts', ':ttslib', ':robotdemo', ':control'
