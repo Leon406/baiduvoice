@@ -17,7 +17,7 @@ public class BaseActivity extends Activity {
     ControlRobotAction controlRobotAction;
 
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         controlHead = new ControlHead(this);
         controlHead.bindService();
@@ -29,6 +29,12 @@ public class BaseActivity extends Activity {
         super.onDestroy();
         controlHead.unbindService();
         controlHead = null;
+    }
+
+    protected String getFormatStr(String cmd, String result) {
+
+        return String.format("cmd:  %s --- result:  %s", cmd, result);
+
     }
 
 

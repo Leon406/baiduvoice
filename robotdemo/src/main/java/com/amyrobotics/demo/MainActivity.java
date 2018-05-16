@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
+import static com.amyrobotics.demo.RobotController.HeadControl.*;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -32,40 +32,50 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     }
 
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_head_stop:
-
-                controlHead.stopTurnHead();
+                RobotController.getInstance().controlHead(STOP);
+//                controlHead.stopTurnHead();
                 break;
             case R.id.btn_head_left:
-                RobotController.getInstance().getControlHead().stopTurnHead();
+                RobotController.getInstance().controlHead(LEFT);
+//                RobotController.getInstance().getControlHead().stopTurnHead();
 //                controlHead.turnHeadLeft();
                 break;
             case R.id.btn_head_right:
-                controlHead.turnHeadRight();
+                RobotController.getInstance().controlHead(RIGHT);
+//                controlHead.turnHeadRight();
                 break;
             case R.id.btn_head_down:
-                controlHead.turnHeadDown();
+                RobotController.getInstance().controlHead(DOWN);
+//                controlHead.turnHeadDown();
                 break;
             case R.id.btn_head_up:
-                controlHead.turnHeadUp();
+                RobotController.getInstance().controlHead(UP);
+//                controlHead.turnHeadUp();
                 break;
             case R.id.btn_body_stop:
-                controlRobotAction.stopWalking();
+                RobotController.getInstance().controlAction(RobotController.Action.STOP);
+//                controlRobotAction.stopWalking();
                 break;
             case R.id.btn_body_left:
-                controlRobotAction.turnLeft();
+                RobotController.getInstance().controlAction(RobotController.Action.LEFT);
+//                controlRobotAction.turnLeft();
                 break;
             case R.id.btn_body_right:
-                controlRobotAction.turnRight();
+                RobotController.getInstance().controlAction(RobotController.Action.RIGHT);
+//                controlRobotAction.turnRight();
                 break;
 
             case R.id.btn_body_advance:
-                controlRobotAction.goForward();
+                RobotController.getInstance().controlAction(RobotController.Action.FORWARD);
+//                controlRobotAction.goForward();
                 break;
             case R.id.btn_body_back:
-                controlRobotAction.moveBack();
+                RobotController.getInstance().controlAction(RobotController.Action.BACK);
+//                controlRobotAction.moveBack();
                 break;
             case R.id.bt_next:
                 startActivity(new Intent(MainActivity.this, Main2Activity.class));

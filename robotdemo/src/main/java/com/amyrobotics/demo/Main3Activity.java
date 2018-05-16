@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import static com.amyrobotics.demo.RobotController.Action.*;
+
 public class Main3Activity extends BaseActivity implements View.OnClickListener {
 
     private Button btn_next;
@@ -26,9 +28,11 @@ public class Main3Activity extends BaseActivity implements View.OnClickListener 
     }
 
 
+    @Override
     public void onClick(View view) {
 
-        runOnUiThread(()->{});
+        runOnUiThread(() -> {
+        });
         switch (view.getId()) {
             case R.id.btn_next:
                 startActivity(new Intent(Main3Activity.this, Main6Activity.class));
@@ -39,22 +43,29 @@ public class Main3Activity extends BaseActivity implements View.OnClickListener 
                 finish();
                 break;
             case R.id.btn_move_2s:
-                controlRobotAction.moveStraight2s();
+//                controlRobotAction.moveStraight2s();
+
+                RobotController.getInstance().controlAction(STRAIT2);
                 break;
             case R.id.btn_arc_move:
-                controlRobotAction.moveArc2s();
+                RobotController.getInstance().controlAction(ARC2);
+//                controlRobotAction.moveArc2s();
                 break;
             case R.id.btn_dance:
-                controlRobotAction.dance();
+                RobotController.getInstance().controlAction(DANCE);
+//                controlRobotAction.dance();
                 break;
             case R.id.btn_turnround:
-                controlRobotAction.turnRound(360);
+                RobotController.getInstance().controlAction(AROUND360);
+//                controlRobotAction.turnRound(360);
                 break;
             case R.id.btn_follow:
-                controlRobotAction.follow();
+                RobotController.getInstance().controlAction(FOLLOW);
+//                controlRobotAction.follow();
                 break;
             case R.id.btn_stop:
-                controlRobotAction.stopFollow();//this method can stop dance and follow and turn;
+                RobotController.getInstance().controlAction(STOP_FOLLOW);
+//                controlRobotAction.stopFollow();//this method can stop dance and follow and turn;
                 break;
         }
     }

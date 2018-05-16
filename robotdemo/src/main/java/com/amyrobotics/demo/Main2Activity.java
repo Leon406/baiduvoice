@@ -5,8 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
-import com.amyrobotics.controlheadandlight.ControlHead;
+import static com.amyrobotics.demo.RobotController.LightControl.*;
 
 public class Main2Activity extends BaseActivity implements View.OnClickListener {
 
@@ -34,29 +33,35 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener 
         switch (view.getId()) {
 
             case R.id.btn_waring:
-                RobotController.getInstance().controlLight(RobotController.LightControl.WARN);
+                RobotController.getInstance().controlLight(WARN);
 
-                controlHead.warning();
+//                controlHead.warning();
                 break;
             case R.id.btn_normal:
-                controlHead.normal();
+                RobotController.getInstance().controlLight(NORMAL);
+//                controlHead.normal();
                 break;
             case R.id.btn_talking:
-                controlHead.talking();
+                RobotController.getInstance().controlLight(TALKING);
+//                controlHead.talking();
 
                 break;
             case R.id.btn_thinking:
-                controlHead.thinking();
+                RobotController.getInstance().controlLight(THINKING);
+//                controlHead.thinking();
                 break;
             case R.id.btn_listening:
-                controlHead.listening();
+                RobotController.getInstance().controlLight(LISTENING);
+//                controlHead.listening();
 
                 break;
             case R.id.btn_lowBattery:
-                controlHead.lowBattery();
+                RobotController.getInstance().controlLight(LOWBATTERY);
+//                controlHead.lowBattery();
                 break;
             case R.id.btn_singing:
-                controlHead.singing();
+                RobotController.getInstance().controlLight(SINGING);
+//                controlHead.singing();
                 break;
             case R.id.btn_next:
                 startActivity(new Intent(Main2Activity.this, Main3Activity.class));

@@ -14,209 +14,129 @@ import com.amyrobotics.navgation.AmyNavigation;
 
 public class Main6Activity extends BaseActivity {
 
+    public static final String TAG ="MapNavi";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
     }
 
+
+
     public void isMapExisted(View view) {
-        AmyCreateMap.mapState(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
 
-
-
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-                Toast.makeText(Main6Activity.this, "onSendCmdFailed :"
-                        +cmd, Toast.LENGTH_SHORT).show();
-            }
-
+        RobotController.getInstance().controlMap(RobotController.Map.EXIST,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("isMapExisted", result);
-                Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show();
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
+
     }
 
 
     public void startMapModle(View view) {
-        AmyCreateMap.startCreateMapModel(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
 
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+        RobotController.getInstance().controlMap(RobotController.Map.START,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("startMapModle", result);
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
     }
 
     public void pose(View view) {
-        AmyCreateMap.locateLable(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
 
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+        RobotController.getInstance().controlMap(RobotController.Map.LABEL,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("pose", result);
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
+
     }
 
     public void saveMap(View view) {
-        AmyCreateMap.saveMap(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
 
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+        RobotController.getInstance().controlMap(RobotController.Map.SAV,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("saveMap", result);
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
+
     }
 
     public void stopMapModel(View view) {
-        AmyCreateMap.stopMapModel(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
 
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+        RobotController.getInstance().controlMap(RobotController.Map.STOP,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("stopMapModel", "result:" + result);
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
     }
 
     public void getNavState(View view) {
-        AmyNavigation.getNavigationState(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
-
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+                RobotController.getInstance().controlNavi(RobotController.Navigation.STATE,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("getNavState", result);
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
     }
 
-    /**
-     * 这个方法耗时需要10-20s
-     * @param view
-     */
+
     public void startNav(View view) {
-        AmyNavigation.startNavigationModel(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
-
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+        RobotController.getInstance().controlNavi(RobotController.Navigation.START,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("startNav", result);
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
     }
 
     public void gotoWhere(View view) {
-        AmyNavigation.sendGoal(1, new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
-
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+        RobotController.getInstance().controlNavi(RobotController.Navigation.GO,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("gotoWhere", result);
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
+
     }
 
     public void cancle(View view) {
-        AmyNavigation.cancelGoal(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
-
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+        RobotController.getInstance().controlNavi(RobotController.Navigation.CANCEL,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
-                Log.d("cancle", result);
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
+
     }
 
     public void stopNav(View view) {
-        AmyNavigation.shutDownNavigation(new AmyListener() {
-            @Override
-            public void onSendCmdSuccess(String cmd) {
-
-            }
-
-            @Override
-            public void onSendCmdFailed(String cmd) {
-
-            }
-
+        RobotController.getInstance().controlNavi(RobotController.Navigation.STOP,new RobotController.SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
+                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
                 Log.d("stopNav", result);
+                Log.d(TAG, getFormatStr(cmd,result));
             }
         });
+
     }
 
     public void up(View view) {
