@@ -1,1 +1,1 @@
-include ':voicelib', ':app', ':tts', ':ttslib', ':robotdemo', ':control'
+include ':voicelib', ':app', ':tts', ':ttslib', ':robotdemo', ':control', ':amylib', ':baiduasr'

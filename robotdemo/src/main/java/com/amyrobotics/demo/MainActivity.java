@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import static com.amyrobotics.demo.RobotController.HeadControl.*;
+
+import leon.me.amylib.RobotController;
+import leon.me.amylib.base.Action;
+
+import static leon.me.amylib.base.HeadControl.*;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -57,24 +61,24 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //                controlHead.turnHeadUp();
                 break;
             case R.id.btn_body_stop:
-                RobotController.getInstance().controlAction(RobotController.Action.STOP);
+                RobotController.getInstance().controlAction(Action.STOP);
 //                controlRobotAction.stopWalking();
                 break;
             case R.id.btn_body_left:
-                RobotController.getInstance().controlAction(RobotController.Action.LEFT);
+                RobotController.getInstance().controlAction(Action.LEFT);
 //                controlRobotAction.turnLeft();
                 break;
             case R.id.btn_body_right:
-                RobotController.getInstance().controlAction(RobotController.Action.RIGHT);
+                RobotController.getInstance().controlAction(Action.RIGHT);
 //                controlRobotAction.turnRight();
                 break;
 
             case R.id.btn_body_advance:
-                RobotController.getInstance().controlAction(RobotController.Action.FORWARD);
+                RobotController.getInstance().controlAction(Action.FORWARD);
 //                controlRobotAction.goForward();
                 break;
             case R.id.btn_body_back:
-                RobotController.getInstance().controlAction(RobotController.Action.BACK);
+                RobotController.getInstance().controlAction(Action.BACK);
 //                controlRobotAction.moveBack();
                 break;
             case R.id.bt_next:

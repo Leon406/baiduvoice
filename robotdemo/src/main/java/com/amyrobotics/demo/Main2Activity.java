@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import static com.amyrobotics.demo.RobotController.LightControl.*;
+
+import leon.me.amylib.RobotController;
+import static leon.me.amylib.base.LightControl.*;
+
 
 public class Main2Activity extends BaseActivity implements View.OnClickListener {
 

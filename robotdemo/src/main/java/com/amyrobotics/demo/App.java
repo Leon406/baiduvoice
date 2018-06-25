@@ -2,6 +2,8 @@ package com.amyrobotics.demo;
 
 import android.app.Application;
 
+import leon.me.amylib.RobotController;
+
 public class App extends Application {
 
     @Override

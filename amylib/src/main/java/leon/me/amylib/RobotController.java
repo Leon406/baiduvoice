@@ -1,14 +1,23 @@
-package com.amyrobotics.demo;
+package leon.me.amylib;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.amyrobotics.controlheadandlight.ControlHead;
 import com.amyrobotics.controlrobotaction.ControlRobotAction;
 import com.amyrobotics.navgation.AmyCreateMap;
-import com.amyrobotics.navgation.AmyListener;
 import com.amyrobotics.navgation.AmyNavigation;
 
+import leon.me.amylib.base.Action;
+import leon.me.amylib.base.HeadControl;
+import leon.me.amylib.base.LightControl;
+import leon.me.amylib.base.Map;
+import leon.me.amylib.base.Navigation;
+import leon.me.amylib.base.SimpleAmyListener;
+
+/**
+ * @author Leon
+ * @Desc 机器人控制类
+ */
 public class RobotController {
 
     private static RobotController robotController;
@@ -34,7 +43,6 @@ public class RobotController {
                 }
             }
         }
-
         return robotController;
     }
 
@@ -46,7 +54,6 @@ public class RobotController {
     }
 
     public ControlHead getControlHead() {
-
         checkNotNull();
         return controlHead;
     }
@@ -66,10 +73,6 @@ public class RobotController {
         if (controlRobotAction == null) {
             throw new NullPointerException("U should init first!!!");
         }
-    }
-
-    public enum LightControl {
-        WARN, NORMAL, TALKING, THINKING, LISTENING, LOWBATTERY, SINGING
     }
 
     /**
@@ -103,15 +106,8 @@ public class RobotController {
                 break;
             default:
                 controlHead.normal();
-
         }
-
     }
-
-    public enum HeadControl {
-        STOP, LEFT, RIGHT, UP, DOWN
-    }
-
 
     /**
      * 控制机器人头部运动
@@ -139,12 +135,6 @@ public class RobotController {
             default:
                 controlHead.stopTurnHead();
         }
-
-    }
-
-
-    public enum Navigation {
-        STATE, START, GO, CANCEL, STOP
     }
 
     /**
@@ -159,35 +149,40 @@ public class RobotController {
                 AmyNavigation.shutDownNavigation(listener);
                 break;
             case START:
+                //耗时 10-20s 成功 result="#NAV02"   失败result="#NAV07"
                 AmyNavigation.startNavigationModel(listener);
                 break;
             case STATE:
+                //成功 result="#NAV02"   失败result="#NAV07"
                 AmyNavigation.getNavigationState(listener);
                 break;
             case GO:
                 // 默认1
+                //成功 result="#NAV01"   丢失目标result="#NAV03"   超时result="#NAV04"
                 AmyNavigation.sendGoal(1, listener);
                 break;
             case CANCEL:
+                // 成功 result="#NAV06"  失败result="#NAV07"
                 AmyNavigation.cancelGoal(listener);
                 break;
             default:
         }
-
     }
 
     /**
      * 导航到
+     * <pre>
+     *          成功     result = "#NAV01"
+     *          丢失目标 result = "#NAV03"
+     *          超时     result = "#NAV04"
+     *
+     * </pre>
      *
      * @param position
      * @param listener
      */
     public void naviTo(int position, SimpleAmyListener listener) {
         AmyNavigation.sendGoal(position, listener);
-    }
-
-    public enum Action {
-        STOP, LEFT, RIGHT, FORWARD, BACK, UP, DOWN, ARC2, DANCE, FOLLOW, STOP_FOLLOW, STRAIT2, AROUND360
     }
 
     /**
@@ -234,11 +229,6 @@ public class RobotController {
             default:
                 controlRobotAction.stopWalking();
         }
-
-    }
-
-    public enum Map {
-        EXIST, START, LABEL, SAV, STOP
     }
 
     /**
@@ -250,46 +240,26 @@ public class RobotController {
         checkNotNull();
         switch (type) {
             case STOP:
+                //  成功 result="FINDM"   失败result="NOM"
                 AmyCreateMap.stopMapModel(listener);
                 break;
             case START:
+                //  成功 result="#MAPS"   失败result="#MAPF"
                 AmyCreateMap.startCreateMapModel(listener);
                 break;
             case LABEL:
+                //#SET, x , y , z
                 AmyCreateMap.locateLable(listener);
                 break;
             case SAV:
+                //  成功 result="FINDM"   失败result="NOM"
                 AmyCreateMap.saveMap(listener);
                 break;
             case EXIST:
+                //  成功 result="FINDM"   失败result="NOM"
                 AmyCreateMap.mapState(listener);
                 break;
             default:
         }
-
     }
-
-
-    /**
-     * 适配AmyListener 接口,按需实现
-     */
-    public static class SimpleAmyListener implements AmyListener {
-
-        @Override
-        public void onSendCmdSuccess(String cmd) {
-            Log.d("SimpleAmyListener", cmd + "\t send success");
-        }
-
-        @Override
-        public void onSendCmdFailed(String cmd) {
-            Log.d("SimpleAmyListener", cmd + "\t send failed");
-        }
-
-        @Override
-        public void onResult(String cmd, String result) {
-
-        }
-    }
-
-
 }

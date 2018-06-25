@@ -7,9 +7,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.amyrobotics.navgation.AmyCreateMap;
-import com.amyrobotics.navgation.AmyListener;
-import com.amyrobotics.navgation.AmyNavigation;
+
+import leon.me.amylib.RobotController;
+import leon.me.amylib.base.Map;
+import leon.me.amylib.base.Navigation;
+import leon.me.amylib.base.SimpleAmyListener;
+
+import static leon.me.amylib.base.Map.*;
 
 
 public class Main6Activity extends BaseActivity {
@@ -26,7 +30,7 @@ public class Main6Activity extends BaseActivity {
 
     public void isMapExisted(View view) {
 
-        RobotController.getInstance().controlMap(RobotController.Map.EXIST,new RobotController.SimpleAmyListener(){
+        RobotController.getInstance().controlMap(Map.EXIST,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -39,7 +43,7 @@ public class Main6Activity extends BaseActivity {
 
     public void startMapModle(View view) {
 
-        RobotController.getInstance().controlMap(RobotController.Map.START,new RobotController.SimpleAmyListener(){
+        RobotController.getInstance().controlMap(START,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -50,7 +54,7 @@ public class Main6Activity extends BaseActivity {
 
     public void pose(View view) {
 
-        RobotController.getInstance().controlMap(RobotController.Map.LABEL,new RobotController.SimpleAmyListener(){
+        RobotController.getInstance().controlMap(LABEL,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -62,7 +66,7 @@ public class Main6Activity extends BaseActivity {
 
     public void saveMap(View view) {
 
-        RobotController.getInstance().controlMap(RobotController.Map.SAV,new RobotController.SimpleAmyListener(){
+        RobotController.getInstance().controlMap(SAV,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -74,7 +78,7 @@ public class Main6Activity extends BaseActivity {
 
     public void stopMapModel(View view) {
 
-        RobotController.getInstance().controlMap(RobotController.Map.STOP,new RobotController.SimpleAmyListener(){
+        RobotController.getInstance().controlMap(STOP,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -84,7 +88,7 @@ public class Main6Activity extends BaseActivity {
     }
 
     public void getNavState(View view) {
-                RobotController.getInstance().controlNavi(RobotController.Navigation.STATE,new RobotController.SimpleAmyListener(){
+                RobotController.getInstance().controlNavi(Navigation.STATE,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -95,7 +99,7 @@ public class Main6Activity extends BaseActivity {
 
 
     public void startNav(View view) {
-        RobotController.getInstance().controlNavi(RobotController.Navigation.START,new RobotController.SimpleAmyListener(){
+        RobotController.getInstance().controlNavi(Navigation.START,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -106,7 +110,15 @@ public class Main6Activity extends BaseActivity {
     }
 
     public void gotoWhere(View view) {
-        RobotController.getInstance().controlNavi(RobotController.Navigation.GO,new RobotController.SimpleAmyListener(){
+//        RobotController.getInstance().controlNavi(RobotController.Navigation.GO,new SimpleAmyListener(){
+//            @Override
+//            public void onResult(String cmd, String result) {
+//                runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
+//                Log.d(TAG, getFormatStr(cmd,result));
+//            }
+//        });
+
+        RobotController.getInstance().naviTo(0,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -117,7 +129,7 @@ public class Main6Activity extends BaseActivity {
     }
 
     public void cancle(View view) {
-        RobotController.getInstance().controlNavi(RobotController.Navigation.CANCEL,new RobotController.SimpleAmyListener(){
+        RobotController.getInstance().controlNavi(Navigation.CANCEL,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());
@@ -128,7 +140,7 @@ public class Main6Activity extends BaseActivity {
     }
 
     public void stopNav(View view) {
-        RobotController.getInstance().controlNavi(RobotController.Navigation.STOP,new RobotController.SimpleAmyListener(){
+        RobotController.getInstance().controlNavi(Navigation.STOP,new SimpleAmyListener(){
             @Override
             public void onResult(String cmd, String result) {
                 runOnUiThread(() -> Toast.makeText(Main6Activity.this, result, Toast.LENGTH_SHORT).show());

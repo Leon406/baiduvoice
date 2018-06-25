@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import static com.amyrobotics.demo.RobotController.Action.*;
+import leon.me.amylib.RobotController;
+
+import static leon.me.amylib.base.Action.*;
 
 public class Main3Activity extends BaseActivity implements View.OnClickListener {
 
