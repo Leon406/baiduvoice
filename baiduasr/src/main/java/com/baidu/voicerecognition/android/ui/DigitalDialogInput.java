@@ -1,7 +1,7 @@
 package com.baidu.voicerecognition.android.ui;
 
-import com.baidu.android.voicedemo.control.MyRecognizer;
-import com.baidu.android.voicedemo.recognization.ChainRecogListener;
+import ll.leon.com.voicelib.control.MyRecognizer;
+import ll.leon.com.voicelib.recognization.ChainRecogListener;
 
 import java.util.Map;
 

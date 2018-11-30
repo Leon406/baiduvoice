@@ -1,8 +1,8 @@
 package com.baidu.android.voicedemo.activity;
 
 import com.baidu.android.voicedemo.activity.setting.OnlineSetting;
-import com.baidu.android.voicedemo.recognization.CommonRecogParams;
-import com.baidu.android.voicedemo.recognization.online.OnlineRecogParams;
+import ll.leon.com.voicelib.recognization.CommonRecogParams;
+import ll.leon.com.voicelib.recognization.online.OnlineRecogParams;
 
 /**
  * 在线识别，用于展示在线情况下的识别参数和效果。

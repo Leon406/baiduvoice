@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.baidu.tts.sample"
@@ -19,7 +18,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(exclude: '*.bak', dir: 'libs')
-    compile 'com.android.support:appcompat-v7:27.+'
+    implementation fileTree(exclude: '*.bak', dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.+'
     implementation project(':ttslib')
 }

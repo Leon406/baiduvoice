@@ -1,8 +1,8 @@
 package com.baidu.android.voicedemo.activity;
 
 import com.baidu.android.voicedemo.activity.setting.AllSetting;
-import com.baidu.android.voicedemo.recognization.CommonRecogParams;
-import com.baidu.android.voicedemo.recognization.all.AllRecogParams;
+import ll.leon.com.voicelib.recognization.CommonRecogParams;
+import ll.leon.com.voicelib.recognization.all.AllRecogParams;
 
 /*
  * 展示语义功能

@@ -9,10 +9,10 @@ import android.os.Bundle;
 import android.util.AndroidRuntimeException;
 import android.util.Log;
 
-import com.baidu.android.voicedemo.control.MyRecognizer;
-import com.baidu.android.voicedemo.recognization.ChainRecogListener;
-import com.baidu.android.voicedemo.recognization.IRecogListener;
-import com.baidu.android.voicedemo.recognization.RecogResult;
+import ll.leon.com.voicelib.control.MyRecognizer;
+import ll.leon.com.voicelib.recognization.ChainRecogListener;
+import ll.leon.com.voicelib.recognization.IRecogListener;
+import ll.leon.com.voicelib.recognization.RecogResult;
 import com.baidu.speech.asr.SpeechConstant;
 
 import java.util.ArrayList;

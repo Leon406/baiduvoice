@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.baidu.speech.recognizerdemo"
@@ -23,4 +22,6 @@ dependencies {
     //compile 'com.android.support:support-v4:19.1.0'
     implementation fileTree(exclude: '*.bak', dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.+'
+    implementation project(':voicelib')
+
 }

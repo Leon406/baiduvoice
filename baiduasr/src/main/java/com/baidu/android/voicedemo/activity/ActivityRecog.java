@@ -8,17 +8,18 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 
-import com.baidu.android.voicedemo.control.MyRecognizer;
-import com.baidu.android.voicedemo.recognization.CommonRecogParams;
-import com.baidu.android.voicedemo.recognization.IStatus;
-import com.baidu.android.voicedemo.recognization.MessageStatusRecogListener;
-import com.baidu.android.voicedemo.recognization.StatusRecogListener;
-import com.baidu.android.voicedemo.recognization.offline.OfflineRecogParams;
-import com.baidu.android.voicedemo.util.AutoCheck;
 import com.baidu.speech.asr.SpeechConstant;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import ll.leon.com.voicelib.control.MyRecognizer;
+import ll.leon.com.voicelib.recognization.CommonRecogParams;
+import ll.leon.com.voicelib.recognization.IStatus;
+import ll.leon.com.voicelib.recognization.MessageStatusRecogListener;
+import ll.leon.com.voicelib.recognization.StatusRecogListener;
+import ll.leon.com.voicelib.recognization.offline.OfflineRecogParams;
+import ll.leon.com.voicelib.util.AutoCheck;
 
 /**
  * 识别的基类Activity。 ActivityCommon定义了通用的UI部分
@@ -73,6 +74,7 @@ public abstract class ActivityRecog extends ActivityCommon implements IStatus {
     /**
      * 在onCreate中调用。初始化识别控制类MyRecognizer
      */
+    @Override
     protected void initRecog() {
         StatusRecogListener listener = new MessageStatusRecogListener(handler);
         myRecognizer = new MyRecognizer(this, listener);
@@ -218,6 +220,7 @@ public abstract class ActivityRecog extends ActivityCommon implements IStatus {
         });
     }
 
+    @Override
     protected void handleMsg(Message msg) {
         super.handleMsg(msg);
 

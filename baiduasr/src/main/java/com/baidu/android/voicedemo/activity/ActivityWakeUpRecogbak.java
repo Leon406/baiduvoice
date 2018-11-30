@@ -2,9 +2,7 @@ package com.baidu.android.voicedemo.activity;
 
 import android.os.Message;
 
-
 import com.baidu.speech.asr.SpeechConstant;
-
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -20,7 +18,7 @@ import ll.leon.com.voicelib.wakeup.RecogWakeupListener;
 /**
  * 唤醒后识别 本例可与ActivityWakeUp 及对比作为集成识别代码的参考
  */
-public class ActivityWakeUpRecog extends ActivityWakeUp implements IStatus {
+public class ActivityWakeUpRecogbak extends ActivityWakeUp implements IStatus {
     {
         descText = "请先单独测试唤醒词功能和在线识别功能。\n"
                 + "唤醒后识别，即唤醒词识别成功后，立即在线识别。\n"

@@ -3,9 +3,9 @@ package com.baidu.android.voicedemo.activity.test;
 import android.os.Handler;
 import android.os.Message;
 
-import com.baidu.android.voicedemo.recognization.IRecogListener;
-import com.baidu.android.voicedemo.recognization.RecogResult;
-import com.baidu.android.voicedemo.util.Logger;
+import ll.leon.com.voicelib.recognization.IRecogListener;
+import ll.leon.com.voicelib.recognization.RecogResult;
+import ll.leon.com.voicelib.util.Logger;
 
 
 /**

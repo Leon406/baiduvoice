@@ -2,16 +2,16 @@ package com.baidu.android.voicedemo.activity;
 
 import android.view.View;
 
-import com.baidu.android.voicedemo.control.MyWakeup;
-import com.baidu.android.voicedemo.recognization.IStatus;
-import com.baidu.android.voicedemo.wakeup.IWakeupListener;
-import com.baidu.android.voicedemo.wakeup.RecogWakeupListener;
-import com.baidu.android.voicedemo.wakeup.SimpleWakeupListener;
 import com.baidu.speech.asr.SpeechConstant;
 import com.baidu.speech.recognizerdemo.R;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import ll.leon.com.voicelib.control.MyWakeup;
+import ll.leon.com.voicelib.recognization.IStatus;
+import ll.leon.com.voicelib.wakeup.IWakeupListener;
+import ll.leon.com.voicelib.wakeup.RecogWakeupListener;
 
 /**
  *  集成文档： http://ai.baidu.com/docs#/ASR-Android-SDK/top 集成指南一节
@@ -60,6 +60,7 @@ public class ActivityWakeUp extends ActivityCommon implements IStatus {
         myWakeup.stop();
     }
 
+    @Override
     protected void initView() {
         super.initView();
         btn.setOnClickListener(new View.OnClickListener() {

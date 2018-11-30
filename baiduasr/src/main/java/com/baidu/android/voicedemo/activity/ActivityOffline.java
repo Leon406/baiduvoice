@@ -1,8 +1,8 @@
 package com.baidu.android.voicedemo.activity;
 
 import com.baidu.android.voicedemo.activity.setting.OfflineSetting;
-import com.baidu.android.voicedemo.recognization.CommonRecogParams;
-import com.baidu.android.voicedemo.recognization.offline.OfflineRecogParams;
+import ll.leon.com.voicelib.recognization.CommonRecogParams;
+import ll.leon.com.voicelib.recognization.offline.OfflineRecogParams;
 
 /**
  * 用于展示离线命令词功能

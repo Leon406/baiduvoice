@@ -5,17 +5,19 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.baidu.android.voicedemo.control.MyRecognizer;
-import com.baidu.android.voicedemo.recognization.ChainRecogListener;
-import com.baidu.android.voicedemo.recognization.MessageStatusRecogListener;
-import com.baidu.android.voicedemo.recognization.offline.OfflineRecogParams;
-import com.baidu.android.voicedemo.util.Logger;
+import ll.leon.com.voicelib.control.MyRecognizer;
+import ll.leon.com.voicelib.recognization.ChainRecogListener;
+import ll.leon.com.voicelib.recognization.MessageStatusRecogListener;
+import ll.leon.com.voicelib.recognization.offline.OfflineRecogParams;
+import ll.leon.com.voicelib.util.Logger;
 import com.baidu.voicerecognition.android.ui.BaiduASRDigitalDialog;
 import com.baidu.voicerecognition.android.ui.DigitalDialogInput;
 import com.baidu.voicerecognition.android.ui.SimpleTransApplication;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import static ll.leon.com.voicelib.recognization.IStatus.STATUS_NONE;
 
 /**
  * UI 界面调用
@@ -55,6 +57,7 @@ public class ActivityUiDialog extends ActivityOnline {
     /**
      * 在onCreate中调用。初始化识别控制类MyRecognizer
      */
+    @Override
     protected void initRecog() {
         listener = new ChainRecogListener();
         // DigitalDialogInput 输入 ，MessageStatusRecogListener可替换为用户自己业务逻辑的listener
